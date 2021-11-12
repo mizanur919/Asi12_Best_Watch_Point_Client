@@ -15,6 +15,7 @@ import ThankYou from './Pages/ThankYou/ThankYou';
 import Orders from './Pages/Orders/Orders';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import ReviewCRUD from './Pages/Home/Reviews/ReviewCRUD';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <PrivateRoute path="/reviewCRUD">
               <ReviewCRUD></ReviewCRUD>
+            </PrivateRoute>
+            <PrivateRoute path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
             </PrivateRoute>
           </Switch>
         </Router>

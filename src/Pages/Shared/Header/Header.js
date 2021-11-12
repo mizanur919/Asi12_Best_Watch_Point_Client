@@ -33,6 +33,7 @@ const Header = () => {
                                         <Nav.Link as={HashLink} to="/manageAllOrders"><span className="text-white">Manage Orders</span></Nav.Link>
                                         <Nav.Link as={Link} to="/dashboard"><span className="text-white">Add New Service</span></Nav.Link>
                                         <Nav.Link as={Link} to="/reviewCRUD"><span className="text-white">Review</span></Nav.Link>
+                                        <Nav.Link as={Link} to="/makeAdmin"><span className="text-white">Make Admin</span></Nav.Link>
                                         <Button onClick={logOut} className="btn btn-danger text-white">LogOut</Button>
                                         {/* <NavDropdown
                                             title={
