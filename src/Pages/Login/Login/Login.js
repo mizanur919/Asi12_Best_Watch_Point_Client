@@ -58,7 +58,7 @@ const Login = () => {
                         <Button onClick={handleLogInWithGoogle} className="mx-auto w-100 btn btn-primary mb-4"><i class="fab fa-google"></i> Login With Google</Button>
                     </div> */}
                     <div className="text-center">
-                        <NavLink to="/register" className="fs-5 text-decoration-none">New User? Register Here</NavLink>
+                        <NavLink to="/register" className="text-decoration-none">New User? Register Here</NavLink>
                     </div>
                 </div>
             </div>
