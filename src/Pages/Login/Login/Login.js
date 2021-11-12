@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { Button } from 'react-bootstrap'
 import './Login.css'
@@ -26,7 +26,7 @@ const Login = () => {
     }
 
     // Hangle Login With Google
-    const handleLogInWithGoogle = () => {
+    const handleGoogleSignIn = () => {
         signInWithGoogle(location, history);
     }
 
@@ -54,9 +54,9 @@ const Login = () => {
                         </div>
                     </form>
                     <p className="text-center my-3">Or</p>
-                    {/* <div className="text-center">
-                        <Button onClick={handleLogInWithGoogle} className="mx-auto w-100 btn btn-primary mb-4"><i class="fab fa-google"></i> Login With Google</Button>
-                    </div> */}
+                    <div className="text-center">
+                        <Button onClick={handleGoogleSignIn} className="mx-auto w-100 btn btn-primary mb-4"><i class="fab fa-google"></i> Login With Google</Button>
+                    </div>
                     <div className="text-center">
                         <NavLink to="/register" className="text-decoration-none">New User? Register Here</NavLink>
                     </div>

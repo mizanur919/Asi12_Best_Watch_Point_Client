@@ -20,16 +20,19 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
 
+                // Save User to Database
+                saveUser(email, name, 'POST');
+
                 // Set New User Name to Firebase
                 updateProfile(auth.currentUser, {
                     displayName: name
-                  }).then(() => {
+                }).then(() => {
                     // Profile updated!
                     // ...
-                  }).catch((error) => {
+                }).catch((error) => {
                     // An error occurred
                     // ...
-                  });
+                });
 
                 history.replace('/');
             })
@@ -60,13 +63,14 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                saveUser(user.email, user.displayName, 'PUT');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
             }).catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setIsLoading(false));;
+            .finally(() => setIsLoading(false));
     }
 
     // Logout user
@@ -93,7 +97,17 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, []);
 
-
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,
