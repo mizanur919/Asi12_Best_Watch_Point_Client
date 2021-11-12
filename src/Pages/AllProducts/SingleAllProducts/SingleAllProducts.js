@@ -9,7 +9,7 @@ const SingleAllProducts = ({product}) => {
                 <img src={img} style={{width: '200px', height: 'auto'}} className="card-img-top mx-auto" alt="" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
+                    <p className="card-text">{description.slice(0, 100)}</p>
                 </div>
                 <div className="d-flex justify-content-around">
                     <Link to={`/productDetails/${_id}`} className="btn btn-danger text-white">View Details</Link>

@@ -30,7 +30,7 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Review added successfully');
+                    alert('Product added successfully');
                     fetch('http://localhost:5000/products')
                         .then(res => res.json())
                         .then(data => setGetAllProducts(data))
@@ -83,7 +83,7 @@ const AddProduct = () => {
                                         key={singleProduct._id}
                                     >
                                         <td>{singleProduct.title}</td>
-                                        <td>{singleProduct.description}</td>
+                                        <td>{singleProduct.description.slice(0, 100)}</td>
                                         <td><img style={{ width: '100px', height: 'auto' }} src={singleProduct.img} alt="" /></td>
                                         <td>{singleProduct.price}</td>
                                     </tr>)
