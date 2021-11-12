@@ -7,7 +7,7 @@ const AddProduct = () => {
     const [product, setProduct] = useState({});
     const [getAllProducts, setGetAllProducts] = useState([]);
 
-    fetch('http://localhost:5000/products')
+    fetch('https://safe-badlands-93133.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setGetAllProducts(data))
 
@@ -20,7 +20,7 @@ const AddProduct = () => {
     }
 
     const handleProductSubmit = e => {
-        fetch('http://localhost:5000/product/add', {
+        fetch('https://safe-badlands-93133.herokuapp.com/product/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const AddProduct = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert('Product added successfully');
-                    fetch('http://localhost:5000/products')
+                    fetch('https://safe-badlands-93133.herokuapp.com/products')
                         .then(res => res.json())
                         .then(data => setGetAllProducts(data))
                 }
