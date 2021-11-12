@@ -1,23 +1,63 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Home from './Pages/Home/Home/Home';
+import AllProducts from './Pages/AllProducts/AllProducts/AllProducts';
+import Header from './Pages/Shared/Header/Header';
+import Footer from './Pages/Shared/Footer/Footer';
+import ProductDetails from './Pages/ProductDetails/ProductDetails';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/Login/PrivateRoute/PrivateRoute';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import ThankYou from './Pages/ThankYou/ThankYou';
+import Orders from './Pages/Orders/Orders';
+import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
+import ReviewCRUD from './Pages/Home/Reviews/ReviewCRUD';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AuthProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/allProducts">
+              <AllProducts></AllProducts>
+            </Route>
+            <Route path="/productDetails/:productId">
+              <ProductDetails></ProductDetails>
+            </Route>
+            <Route path="/thankyou">
+              <ThankYou></ThankYou>
+            </Route>
+            <PrivateRoute path="/placeOrder/:productId">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/orders">
+              <Orders></Orders>
+            </PrivateRoute>
+            <PrivateRoute path="/manageAllOrders">
+              <ManageAllOrders></ManageAllOrders>
+            </PrivateRoute>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <PrivateRoute path="/reviewCRUD">
+              <ReviewCRUD></ReviewCRUD>
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
