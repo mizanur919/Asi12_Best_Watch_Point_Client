@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Best Watch Point Total eCommerce Solution
 
 Live Website [Best Watch Point](https://bestwatchpoint.netlify.app/).
 
