@@ -4,7 +4,7 @@ import useCart from '../../hooks/useCart';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-    const { user, registerUser, loginUser, logOut, isLoading, authError, signInWithGoogle } = useFirebase();
+    const { user, registerUser, loginUser, logOut, isLoading, authError, signInWithGoogle, admin } = useFirebase();
     const { selectedProduct, addToCart, setSelectedProduct } = useCart();
     const Data = {
         user,
@@ -16,7 +16,8 @@ const AuthProvider = ({ children }) => {
         selectedProduct,
         addToCart,
         setSelectedProduct,
-        signInWithGoogle
+        signInWithGoogle,
+        admin
     };
     return (
         <AuthContext.Provider value={Data}>

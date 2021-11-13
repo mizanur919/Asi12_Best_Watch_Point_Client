@@ -32,7 +32,6 @@ const Orders = () => {
     }
     return (
         <>
-            <Header></Header>
             <div className="container" style={{ minHeight: '500px' }}>
                 <div className="row my-4">
                     <div className="col-md-8">
@@ -65,7 +64,6 @@ const Orders = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </>
     );
 };

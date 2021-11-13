@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import { Redirect, useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -86,7 +87,7 @@ const PlaceOrder = () => {
                                 <input ref={phoneRef} type="text" className="form-control" id="exampleFormControlInput1" />
                             </div>
                         </form>
-                        <Link to={'/placeOrder'} onClick={() => addToCart(product)} className="btn btn-danger text-white w-100"><i className="fas fa-cart-plus"></i> Place Order</Link>
+                        <Link to={'/thankyou'}><Button className="btn btn-danger text-white w-100" onClick={() => addToCart(product)}><i className="fas fa-cart-plus"></i> Place Order</Button></Link>
                     </div>
                 </div>
             </div>

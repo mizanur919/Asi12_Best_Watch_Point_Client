@@ -17,6 +17,7 @@ import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import ReviewCRUD from './Pages/Home/Reviews/ReviewCRUD';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageAllOrders">
               <ManageAllOrders></ManageAllOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path="/register">
               <Register></Register>

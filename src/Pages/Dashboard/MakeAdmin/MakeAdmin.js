@@ -29,7 +29,6 @@ const MakeAdmin = () => {
     }
     return (
         <>
-            <Header></Header>
             <div className="container">
                 <div className="row d-flex align-items-center">
                     <div className="col-md-6 col-lg-3 col-sm-6 mx-auto rounded py-5 px-4">
@@ -53,7 +52,6 @@ const MakeAdmin = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </>
     );
 };
