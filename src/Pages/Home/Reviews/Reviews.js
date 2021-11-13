@@ -12,9 +12,9 @@ const Reviews = () => {
             <h4 className="text-center my-5">Our Happy Client Reviews</h4>
             <div className="row row-cols-3 row-cols-md-3 g-4">
                 {
-                    reviews.slice(0, 3).map(singleReview => <div
+                    reviews.map(singleReview => <div
                         key={singleReview._id}
-                        style={{ minHeight: "300px" }}
+                        style={{ minHeight: "200px" }}
                         className="col"
                     >
                         <div className="card py-4">

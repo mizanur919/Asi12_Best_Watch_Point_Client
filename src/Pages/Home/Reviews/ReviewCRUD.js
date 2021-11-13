@@ -50,7 +50,6 @@ const ReviewCRUD = () => {
     }
     return (
         <>
-            <Header></Header>
             <div className="container my-3">
                 <div className="row my-5">
                     <div className="col-md-6">
@@ -97,7 +96,6 @@ const ReviewCRUD = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </>
     );
 };

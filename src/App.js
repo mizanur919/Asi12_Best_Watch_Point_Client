@@ -18,6 +18,7 @@ import ReviewCRUD from './Pages/Home/Reviews/ReviewCRUD';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import NotFound from '../src/Pages/NotFound/NotFound'
 
 function App() {
   return (
@@ -49,9 +50,9 @@ function App() {
             <PrivateRoute path="/orders">
               <Orders></Orders>
             </PrivateRoute>
-            <PrivateRoute path="/manageAllOrders">
+            {/* <PrivateRoute path="/manageAllOrders">
               <ManageAllOrders></ManageAllOrders>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
@@ -67,6 +68,9 @@ function App() {
             <PrivateRoute path="/addProduct">
               <AddProduct></AddProduct>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

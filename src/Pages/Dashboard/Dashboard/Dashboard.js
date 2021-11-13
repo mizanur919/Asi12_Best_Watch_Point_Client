@@ -15,6 +15,8 @@ import Orders from '../../Orders/Orders';
 import ManageAllOrders from '../../ManageAllOrders/ManageAllOrders';
 import useAuth from '../../../hooks/useAuth';
 import { Button } from 'react-bootstrap';
+import ReviewCRUD from '../../Home/Reviews/ReviewCRUD';
+import Payment from '../Payment/Payment';
 
 // var el = document.getElementById("wrapper");
 // var toggleButton = document.getElementById("menu-toggle");
@@ -38,27 +40,33 @@ const Dashboard = () => {
                     {/* <Link href="#" className="list-group-item list-group-item-action bg-transparent second-text active"><i
                         className="fas fa-tachometer-alt me-2"></i>Dashboard</Link> */}
 
+                    <Link to="/" className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        className="fas fa-home"></i> Home</Link>
+
                     <Link to={`${url}`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        className="fas fa-project-diagram me-2"></i>Dashboard</Link>
+                        className="fas fa-tachometer-alt"></i> Dashboard</Link>
 
                     {
                         !admin &&
                         <>
-                            <Link to={`${url}/myOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                                className="fas fa-chart-line me-2"></i>My Orders</Link>
+                            <Link to={`${url}/myOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i className="fas fa-cart-arrow-down"></i> My Orders</Link>
+
+                            <Link to={`${url}/payment`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i className="fab fa-amazon-pay"></i> Payment</Link>
+
+                            <Link to={`${url}/myReviews`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i className="fas fa-search-location"></i> My Reviews</Link>
                         </>
                     }
 
                     {admin &&
                         <>
                             <Link to={`${url}/makeAdmin`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                                className="fas fa-chart-line me-2"></i>Make Admin</Link>
+                                className="fas fa-users"></i> Make Admin</Link>
 
                             <Link to={`${url}/addProduct`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                                className="fas fa-chart-line me-2"></i>Add Product</Link>
+                                className="fas fa-pen-square"></i> Add Product</Link>
 
                             <Link to={`${url}/manageOrders`} className="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                                className="fas fa-chart-line me-2"></i>Manage Orders</Link>
+                                className="fas fa-border-all"></i> Manage Orders</Link>
                         </>
                     }
 
@@ -117,6 +125,12 @@ const Dashboard = () => {
                             </Route>
                             <Route path={`${path}/manageOrders`}>
                                 <ManageAllOrders></ManageAllOrders>
+                            </Route>
+                            <Route path={`${path}/myReviews`}>
+                                <ReviewCRUD></ReviewCRUD>
+                            </Route>
+                            <Route path={`${path}/payment`}>
+                                <Payment></Payment>
                             </Route>
                         </Switch>
                     </div>

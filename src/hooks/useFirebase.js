@@ -76,7 +76,7 @@ const useFirebase = () => {
 
     // Check Admin or Not
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://safe-badlands-93133.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email]);

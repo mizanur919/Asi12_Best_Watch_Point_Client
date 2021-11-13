@@ -1,21 +1,22 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './ThankYou.css'
 
 const ThankYou = () => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-6">
-                    <img className="img-fluid" src="https://i.ibb.co/M15gzSG/manuel-cosentino-M3fh-ZSBFo-FQ-unsplash-1.jpg" alt="" />
+        <div className="container notfound-container">
+            <div className="row ">
+                <div className="col-md-8 mx-auto">
+                    <img src="https://i.ibb.co/qkDDjxy/thanks.png" className="img-fluid w-50" alt="" />
                 </div>
-                <div className="col-md-6">
-                    <h4>Thank You <br /> For Placing Order</h4>
-                    <Nav.Link as={Link} to="/allProducts"><span className="text-white">Check Our More Products</span></Nav.Link>
+                <div className="col-md-8 mx-auto">
+                    <h4>Thank You For Placing Order</h4><br />
+                    <Link to="/allProducts"><Button className="text-white btn btn-danger w-25">Check Our More Products</Button></Link>
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default ThankYou;
